@@ -1,29 +1,28 @@
-/*
-1.
-*/
+
+
 
 document.getElementById('btn-withdraw').addEventListener('click', function(){
 
-    const withdrawField = document.getElementById('withdaw-field');
+    const withdrawField = document.getElementById('withdraw-field');
     const newWithdrawAmountString = withdrawField.value;
     const newWithdrawAmount = parseFloat(newWithdrawAmountString);
+    console.log(newWithdrawAmount);
 
     withdrawField.value = '';
 
-    const withdawTotalElement = document.getElementById('withdaw-total');
-    const previousWithdawTotalString = withdawTotalElement.innerText;
-    const previousWithdawTotal = parseFloat(previousWithdawTotalString);
+    const withdrawTotalElement = document.getElementById('withdraw-total');
+    const previousWithdrawTotalString = withdrawTotalElement.innerText;
+    const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
 
-    const newWithdrawTotal = previousWithdawTotal + newWithdrawAmount;
-    withdawTotalElement.innerText = newWithdrawTotal;
-
+    const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+    withdrawTotalElement.innerText = newWithdrawTotal;
+     
     const balanceElement = document.getElementById('balance-total');
     const previousBalanceTotalString = balanceElement.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 
-    const newBalanceTotal = previousBalanceTotal - newBalanceTotal;
-    const balanceElement.innerText = newBalanceTotal;
-    
+    const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
+    balanceElement.innerText = newBalanceTotal;
 
 
-});
+})
